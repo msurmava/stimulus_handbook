@@ -18,6 +18,11 @@ export default class extends Controller {
 
   showCurrentSlide() {
     this.slideTargets.forEach((element, index) => {
+      if (this.indexValue < 0){
+        this.indexValue = 3}
+        else if(this.indexValue > 3){
+          this.indexValue = 0
+        }
       element.hidden = index != this.indexValue
     })
   }
